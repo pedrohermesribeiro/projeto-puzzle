@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . .
 # Copy frontend files to static directory
 RUN mkdir -p src/main/resources/static
-RUN cp -r puzzle.html puzzle.js style.css images src/main/resources/static
+RUN cp -r tutoriais/puzzle.html tutoriais/puzzle.js style.css images src/main/resources/static/
 RUN mvn clean install -DskipTests
 
 # Etapa 2: Execução
