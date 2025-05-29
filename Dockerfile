@@ -2,6 +2,9 @@
 FROM maven:3.9.4-eclipse-temurin-21 AS build
 WORKDIR /app
 COPY . .
+# Copy frontend files to static directory
+RUN mkdir -p src/main/resources/static
+RUN cp -r frontend/index.html frontend/puzzle.js frontend/style.css frontend/images src/main/resources/static/
 RUN mvn clean install -DskipTests
 
 # Etapa 2: Execução

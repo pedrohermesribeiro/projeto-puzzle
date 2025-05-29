@@ -24,6 +24,11 @@ public class PuzzleController {
     @Autowired
     private PuzzleImageRepository imageRepository;
 
+    @GetMapping("/")
+    public String home() {
+        return "redirect:/puzzle.html";
+    }
+    
     public PuzzleController() {
         logger.info("PuzzleController initialized");
     }
